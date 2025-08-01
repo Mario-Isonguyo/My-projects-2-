@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(/images/bg-tablet-pattern.svg);
+            background-size: cover;
+            background-repeat: repeat-y;
+            background-color: whitesmoke;
+            background-size: auto;
+            background-position: center;
+            height: 100vh;
+
+        }
+         header { 
+            justify-content: space-between;
+            align-items: center;
+        }
+        #PEN {
+            column-gap: 20px;
+        }
+       .flex-container {
+        display: flex;
+        flex-direction: row;
+        background-color: none;
+       }
+       .flex-container-4{
+            padding-top: 0;
+            padding: 20px;
+       }
+       li {
+        display: inline;
+        margin: 10px;
+       }
+       .logo {
+        padding: 5px;
+        margin: 5px;
+       }
+       .nav-links {
+        text-align: center;
+        text-decoration-line: none;
+       }
+       a {
+        color: rgb(39, 33, 26);
+        text-decoration-line: none;
+       }
+       a:hover {
+        color: brown;
+        font-size: 20px;
+        text-decoration: underline;
+       }
+        .search-bar button {
+        background-color:  rgb(252, 95, 32);
+        color: white;
+        border-radius: 15px ;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        color: darksalmon;
+        font-size: 14px;
+    }
+    
+    .search-bar {
+        display: flex;
+        max-width: 400px;
+        margin: 20px auto;
+        align-items: end;
+    }
+     .bd-commend {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 45px;
+            gap: 95px; 
+            margin: 150px;
+            height: auto;
+
+        }
+        .bd-commend p:hover {
+            color: none;
+
+        }
+         .bt-learn {
+            background-color: rgb(252, 95, 32);
+            color: white;
+            padding: 15px;
+            border-radius: 35px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            border-color: none;
+            border: none;
+        }
+        .bt-learn:hover {
+            color: linear-gradient( to bottom, #ccc, pink, whitesmoke);
+            font-style: bold;
+            cursor: pointer;
+        }
+
+        .ad-commend {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 45px;
+            gap: 95px; 
+            margin: 150px;
+            height: auto;
+            margin-top: 0;
+            margin-bottom: 5rem;
+
+        }
+        .ad-commend p {
+            color:  rgb(7, 7, 24);
+        }
+        .pan-log button {
+            border-radius: 45px;
+            background-color:  rgb(252, 95, 32);
+            border-color: none;
+            text-decoration-color: rgb(12, 9, 35);
+            border: none;
+        }
+        .pap {
+            display: grid;
+            /* background-image: url(images/bg-tablet-pattern.svg);
+            background-repeat: no-repeat; */
+            grid-template-columns: repeat(3,1fr);
+            gap: 50px;
+            margin: 5px;
+            padding: 20px;
+            margin-top: 0;
+            margin-bottom: 0;
+            background-color: none;
+            border-radius: 25px;
+            border: 10px;
+            box-shadow: #ccc;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .item {
+            background-color: whitesmoke;
+            border-radius: 5px;
+            box-shadow: #ccc;
+        }
+        .pap img {
+            border-radius: 100px;
+            margin-top: 0;
+            padding-top: 0;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color:   rgb(7, 7, 24);
+            margin-bottom: 5rem;
+        
+        }
+        .lll {
+            text-align: center;
+            color: rgb(252, 95, 32);
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+            margin-bottom: 0;
+            margin-top: 0;
+            
+        }
+        .ed-commend {
+            display: flex;
+            background-color: rgb(252, 95, 32);
+            color: white;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            margin-top: 0;
+
+        }
+        .img-log button {
+            background-color: white;
+            color: rgb(7, 7, 24);
+        }
+        .foot {
+            display: flex;
+            flex-direction: row;
+            text-align: left;
+            background-color:  rgb(7, 7, 24);
+            align-items: start;
+            justify-content: start;
+            margin: 0;
+            padding: 20px;
+            gap: 30px;
+        }
+        .ft-img img {
+            border-radius: 15px;
+        }
+         .foot-li li{
+            text-align: center;
+            display: block;
+            justify-items: center;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration-color: #ccc;
+            text-decoration: #ccc;
+        }
+        .fit {
+            color: #ccc;
+            text-align: center;
+        }
+        .d {
+            padding: 20px;
+            margin: 40px;
+            justify-content: end;
+        }
+        .d button {
+            border-radius: 25px;
+            background-color:rgb(252, 95, 32); 
+            padding: 20px;
+            font-style: bold;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            border: none;
+        
+        }
+        @media (max-width: 768px) {
+    .flex-container,
+    .bd-commend,
+    .ad-commend,
+    .ed-commend,
+    .foot {
+        flex-direction: column;
+        align-items: center;
+        text-align: start;
+        gap: 20px;
+        margin: 20px;
+    }
+    li {
+        display: none;
+        margin: 10px;
+       }
+
+    .pap {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    .pan-log button {
+        margin: 10px 0;
+    }
+
+    .img-log img {
+        width: 100%;
+        height: auto;
+    }
+
+    .d {
+        margin: 20px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pap {
+        grid-template-columns: 1fr;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    .bt-learn, .d button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .search-bar button {
+        width: 100%;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .foot {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .bd-commend,
+    .ad-commend {
+        margin: 10px;
+        gap: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+     <header>
+            <div class="flex-container">
+                <!-- Logo Image -->
+                 <div class="logo">
+                <img src="/images/logo (1).svg" alt="My Website Logo" class="logo">
+                </div>
+                
+
+                    <!-- Navigation Bar -->
+                <nav>
+                    <ul class="nav-links">
+                        <li>
+                            <a href="#" target="_blank">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">Product</a> 
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">Careers</a>
+                        </li>
+                        <li>
+                             <a href="#" target="_blank">Community</a>
+                        </li>
+                    </ul>
+                </nav> 
+           
+            <form class="search-bar">
+                <button class="mum" type="submit">Get Started</button>
+            </form>
+            </div>
+        </header>
+
+          <div class="bd-commend">
+        <div class="flex-container-3">
+            <h2><b>Make<br>Veez Beauty<br>Your World</b></h2>
+            <p>At <strong>Veez Beauty World</strong>,<br>we bring out the beauty in you<br>with expert care and creativity.<br>
+            We specialize in <strong>hairstyles and makeup</strong> for all occassions,<br>
+             offerring premium services
+        for <strong>brides, kids</strong>, and everyone in betwween.</p><br><br>
+
+            <button class="bt-learn"><b>Get Started</b></button><br>
+
+            
+        </div>
+
+        <div class="img-log">
+            <img src="/images/illustration-intro.svg" width="auto" height="450px"/>
+        </div>
+    </div> <br>
+
+        
+
+    <div class="ad-commend">
+        <div class="flex-container-4">
+            <h2><b>What makes<br>Veez Beauty World</b><br> unique? </h2>
+            <p><strong>Veez Beauty World</strong><br>stands out for it's expert<br>bridal and kids' beauty services,<br>
+            personalized care, and a friendly team, in a clean,<br>stylish space. We use high-quality products to give<br>
+            you beautiful, lasting results-because you deserve <strong> the best...</strong>
+
+            
+        </div>
+
+        <div class="pan-log">
+            <button>01</button> <b>Bridal & kids  Beauty Expert</b><br><br>We specialize in both <strong>elegant 
+                bridal styling and <br>fun, gentle care for kids,</strong> making us a one-stop <br>
+                beauty destination
+                for families.<br><br><br>
+
+            <button>02</button> <b>personalized Touch</b> <br><br>Every client is special. We listen to your needs<br>
+             and deliver a <strong>custom look</strong> that fits your style,<br> personality, and event.<br><br><br>
+
+            <button>03</button> <b>Skilled & Friendly Professionals</b> <br><br>Our team is
+             <strong>experienced, creative, and friendly</strong>, <br>making every visit relaxing and<br>
+             enjoyable.<br><br><br>
+        </div>
+        </div>
+           
+        </div>
+    </div>
+
+     <h1>What they've said</h1>
+
+     <div class="pap">
+        <div class="item">
+            <img src="images/WhatsApp Image 2025-07-26 at 3.51.01 PM (1).jpeg"/><br><br><b>Promise Hassan</b>
+            <p>Veez world is all they say,<br>
+             their environment is calm and clean,<br>
+              services here are the best.</p>
+        </div> 
+
+        <div class="item">
+            <img src="images/WhatsApp Image 2025-07-26 at 3.51.01 PM (3).jpeg"/><br><br><b>Victory Momoh</b>
+            <p>The best decision for me<br> is making veez beauty world <br>
+            my choice and my confidence is ever <br> building. Thank you Veez beauty.</p>
+        </div>
+
+        <div class="item">
+            <img src="images/WhatsApp Image 2025-07-26 at 3.51.01 PM (2).jpeg"/><br><br><b>Abibat B.</b>
+             <p>Veez world is all they say,<br>
+             their environment is calm and clean,<br>
+              services here are the best.</p>
+        </div>
+    </div>
+     <div class="lll">
+        <button class="bt-learn"><b>Get Started</b></button><br><br><br>
+    </div>
+     <div class="ed-commend">
+        <div class="flex-container-3">
+            <h2><b>Simplify how your team<br> works today.</b></h2>
+        </div>
+             
+        <div class="img-log">
+            <button class="bt-learn"><b>Get Started</b></button>
+        </div>
+        </div>
+     <div class="ft">
+                    <footer class="foot">
+                    <div class="ft-img">
+                        <p style="color: #ccc;">  <img src="images/logo (1).svg"> 
+                        <br><br>
+
+                        <div class="p-img">
+                            <a href="#" target="_blank"><img src="images/icon-facebook.svg"/></a>  <img src="images/icon-youtube.svg"/> 
+                            <a href="#" target="_blank"><img src="images/icon-twitter (1).svg"/></a>  <img src="images/icon-pinterest.svg"/>
+                    </div>
+                    </div><br>
+                    
+                        
+
+                        <div class="ft-links">
+                            <ul class="foot-li">
+                        <li>
+                            <a href="index.html" target="_blank">Home</a>
+                        </li>
+                        <li>
+                            <a href="About Us.html" target="_blank">About Us</a> 
+                        </li>
+                        <li>
+                            <a href="Services.html" target="_blank">Services</a>
+                        </li>
+                        <li>
+                            <a href="Contact.html" target="_blank">Contact</a>
+                        </li>
+                        <LI>
+                             <a href="https://WhatsApp.com/d/code=c43INCd8AU" target="_blank" id="PEN">Book</a>
+                        </LI>
+                            </ul>
+                        </div>
+
+                        <div class="fit">
+                            <h4>Location:</h4>
+                            <p>Suite 001 V&V Lane, <br>Maitaima, Abuja.</p>
+
+                            <h4>Opening Hours:</h4>
+                            <p>Monday - Saturday: 9:00 AM - 4:00 PM<br>
+                            Sunday: By Appointment Only</p>
+                        </div>
+
+                        <div class="fit">
+                            <h4>Contact:</h4>
+                            <p>Phone/WhatsApp: +2349044241530 <br>
+                            Email: info@veezbeautyworld.com</p>
+                        </div>
+
+                        <div class="d">
+                          <a href="#" target="_blank"> <button>Book Now</button></a>
+                        </div>
+                    </footer>
+            </div>
+</body>
+    
+</body>
+</html>
