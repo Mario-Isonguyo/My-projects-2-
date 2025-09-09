@@ -236,12 +236,37 @@
             border: none;
         
         }
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+        } 
         @media (max-width: 768px) {
     .flex-container,
     .bd-commend,
     .ad-commend,
     .ed-commend,
     .foot {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        margin: 20px;
+    }
+    .d button {
+            border-radius: 25px;
+            background-color:rgb(252, 95, 32); 
+            padding: 20px;
+            font-style: bold;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            border: none;
+            align-items: start;
+        
+        }
+    .ad-commend {
         flex-direction: column;
         align-items: center;
         text-align: start;
@@ -260,9 +285,10 @@
     }
 
     .search-bar {
+        display: none;
         flex-direction: column;
         width: 100%;
-        padding: 10px;
+        padding: 10px; 
     }
 
     header {
@@ -271,6 +297,10 @@
 
     .pan-log button {
         margin: 10px 0;
+        text-align: end;
+        align-items: start;
+        justify-content: left;
+        justify-items: left;
     }
 
     .img-log img {
@@ -282,16 +312,36 @@
         margin: 20px;
         padding: 10px;
     }
+    .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+        }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .pap {
         grid-template-columns: 1fr;
+    }
+    .logo {
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        gap: 5rem;
     }
 
     h1, h2 {
         font-size: 1.5rem;
     }
+    .hamburger {
+            display: block;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+            font-weight: bold;
+            padding-top: 0;
+        }
 
     .bt-learn, .d button {
         padding: 10px;
@@ -303,10 +353,13 @@
     }
 
     .flex-container {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 1.5rem;
     }
 
     .foot {
+        display: flex;
+        flex-direction: column-reverse;
         gap: 10px;
         padding: 10px;
     }
@@ -316,6 +369,76 @@
         margin: 10px;
         gap: 20px;
     }
+    #nav-links {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: absolute;
+  top: 60px; /* Below header */
+  right: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+/* Show nav when active */
+#nav-links.active {
+  display: flex;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+/* Smooth dropdown effect */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+   
+}
+}
+@media (max-width: 768px) {
+            li {
+                display: block;
+                margin: 10px 0;
+            }
+            #nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: white;
+                position: absolute;
+                top: 60px; /* Below header */
+                right: 20px;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+                z-index: 1000;
+            }
+            #nav-links.active {
+                display: flex;
+                animation: slideDown 0.3s ease-in-out;
+            }
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .hamburger {
+                display: block;
+                font-size: 30px;
+                cursor: pointer;
+                padding: 10px;
+                font-weight: bold;
+            }
 }
     </style>
 </head>
@@ -326,11 +449,14 @@
                  <div class="logo">
                 <img src="images/logo (1).svg" alt="My Website Logo" class="logo">
                 </div>
-                
+               
+                <div class="hamburger" id="hamburger">
+                 &#9776;
+                </div>
 
                     <!-- Navigation Bar -->
-                <nav>
-                    <ul class="nav-links">
+                <nav id="mobile-nav">
+                    <ul class="nav-links" id="nav-links">
                         <li>
                             <a href="#" target="_blank">Pricing</a>
                         </li>
@@ -492,7 +618,34 @@
                         </div>
                     </footer>
             </div>
-</body>
-    
+
+             <script>
+            // Mobile Menu Toggle
+            const hamburger = document.getElementById("hamburger");
+            const navLinks = document.getElementById("nav-links");
+            const navItems = navLinks.querySelectorAll("a");
+
+            // Toggle menu and icon
+            hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+
+            // Change icon
+            if (navLinks.classList.contains("active")) {
+                hamburger.innerHTML = "&times;"; // X
+            } else {
+                hamburger.innerHTML = "&#9776;"; // ☰
+            }
+            });
+
+            // Close menu when clicking a link
+            navItems.forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                hamburger.innerHTML = "&#9776;"; // Reset to ☰
+            });
+            });
+  </script>
+
+
 </body>
 </html>
